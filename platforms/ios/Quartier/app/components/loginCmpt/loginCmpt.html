@@ -1,0 +1,16 @@
+<StackLayout>
+      <Image src="~/images/website-logo.png" stretch="none" horizontalAlignment="center"></Image>
+
+<TextField  visibility="{{ !isLoggingIn ? 'visible' : 'collapse' }}" hint="User name"  [(ngModel)]="userName"
+    autocorrect="false" autocapitalizationType="none"></TextField>
+<TextField  visibility="{{ !isLoggingIn ? 'visible' : 'collapse' }}" hint="First name"  [(ngModel)]="firstName"
+    autocorrect="false" autocapitalizationType="none"></TextField>
+<TextField visibility="{{ !isLoggingIn ? 'visible' : 'collapse' }}" hint="Last name"  [(ngModel)]="lastName"
+    autocorrect="false" autocapitalizationType="none"></TextField>
+<TextField hint="Email Address"  [(ngModel)]="email"
+    autocorrect="false" autocapitalizationType="none"></TextField>
+<TextField hint="Password" secure="true" [(ngModel)]="password"></TextField>
+
+  <Button [text]="isLoggingIn ? 'Sign in' : 'Sign up'" class="submit-button" (tap)="signUp()"></Button>
+  <Button [text]="isLoggingIn ? 'Sign up' : 'Back to login'" (tap)="toggleDisplay()"></Button>
+</StackLayout>
