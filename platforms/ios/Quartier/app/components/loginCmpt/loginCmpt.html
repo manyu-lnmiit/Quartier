@@ -1,16 +1,16 @@
 <StackLayout>
       <Image src="~/images/website-logo.png" stretch="none" horizontalAlignment="center"></Image>
 
-<TextField  visibility="{{ !isLoggingIn ? 'visible' : 'collapse' }}" hint="User name"  [(ngModel)]="userName"
+<TextField  hint="User name"  [(ngModel)]="user.userName"
     autocorrect="false" autocapitalizationType="none"></TextField>
-<TextField  visibility="{{ !isLoggingIn ? 'visible' : 'collapse' }}" hint="First name"  [(ngModel)]="firstName"
+<TextField  visibility="{{ !isLoggingIn ? 'visible' : 'collapse' }}" hint="First name"  [(ngModel)]="user.firstName"
     autocorrect="false" autocapitalizationType="none"></TextField>
-<TextField visibility="{{ !isLoggingIn ? 'visible' : 'collapse' }}" hint="Last name"  [(ngModel)]="lastName"
+<TextField visibility="{{ !isLoggingIn ? 'visible' : 'collapse' }}" hint="Last name"  [(ngModel)]="user.lastName"
     autocorrect="false" autocapitalizationType="none"></TextField>
-<TextField hint="Email Address"  [(ngModel)]="email"
+<TextField visibility="{{ !isLoggingIn ? 'visible' : 'collapse' }}"  hint="Email Address"  [(ngModel)]="user.emailId"
     autocorrect="false" autocapitalizationType="none"></TextField>
-<TextField hint="Password" secure="true" [(ngModel)]="password"></TextField>
+<TextField hint="Password" secure="true" [(ngModel)]="user.password"></TextField>
 
-  <Button [text]="isLoggingIn ? 'Sign in' : 'Sign up'" class="submit-button" (tap)="signUp()"></Button>
+  <Button [text]="isLoggingIn ? 'Sign in' : 'Sign up'" class="submit-button" (tap)="submit()"></Button>
   <Button [text]="isLoggingIn ? 'Sign up' : 'Back to login'" (tap)="toggleDisplay()"></Button>
 </StackLayout>
